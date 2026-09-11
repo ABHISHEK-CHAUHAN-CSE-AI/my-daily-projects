@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Task Manager</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+    body { background: #0f172a; color: #fff; display: flex; justify-content: center; padding-top: 50px; }
+    .app { background: #1e293b; padding: 25px; border-radius: 12px; width: 350px; }
+    h2 { font-size: 20px; margin-bottom: 15px; color: #38bdf8; }
+    .input-box { display: flex; gap: 8px; margin-bottom: 15px; }
+    input { flex: 1; padding: 8px; border-radius: 6px; border: 1px solid #475569; background: #0f172a; color: #fff; outline: none; }
+    button { background: #38bdf8; border: none; padding: 8px 12px; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    ul { list-style: none; }
+    li { background: #334155; padding: 8px 12px; border-radius: 6px; margin-bottom: 8px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h2>Daily Task Tracker</h2>
+    <div class="input-box">
+      <input type="text" id="taskInput" placeholder="Add new task...">
+      <button onclick="addTask()">Add</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+  <script>
+    function addTask() {
+      let input = document.getElementById('taskInput');
+      if (input.value.trim() !== "") {
+        let li = document.createElement('li');
+        li.textContent = "✓ " + input.value;
+        document.getElementById('taskList').appendChild(li);
+        input.value = "";
+      }
+    }
+  </script>
+</body>
+</html>
