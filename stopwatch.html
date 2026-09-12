@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Timer & Stopwatch</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: #0b132b; color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .box { background: #1c2541; padding: 35px; border-radius: 16px; text-align: center; border: 1px solid #3a506b; box-shadow: 0 10px 30px rgba(0,0,0,0.4); width: 320px; }
+    h3 { font-size: 20px; color: #5bc0be; }
+    .display { font-size: 40px; font-weight: bold; font-family: monospace; color: #6fffe9; margin: 20px 0; letter-spacing: 2px; }
+    .btn-group { display: flex; gap: 10px; justify-content: center; }
+    button { background: #3a506b; border: none; color: #fff; padding: 10px 16px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+    button:hover { background: #6fffe9; color: #0b132b; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h3>⏱️ Study Session Timer</h3>
+    <div class="display" id="timer">00:00:00</div>
+    <div class="btn-group">
+      <button onclick="startTimer()">Start</button>
+      <button onclick="stopTimer()">Stop</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+  </div>
+  <script>
+    let seconds = 0, interval = null;
+    function updateDisplay() {
+      let hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
+      let mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+      let secs = String(seconds % 60).padStart(2, '0');
+      document.getElementById('timer').innerText = `${hrs}:${mins}:${secs}`;
+    }
+    function startTimer() { if (!interval) interval = setInterval(() => { seconds++; updateDisplay(); }, 1000); }
+    function stopTimer() { clearInterval(interval); interval = null; }
+    function resetTimer() { stopTimer(); seconds = 0; updateDisplay(); }
+  </script>
+</body>
+</html>
