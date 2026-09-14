@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Focus Timer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: #0d1117; color: #e6edf3; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .card { background: #161b22; padding: 30px; border-radius: 16px; text-align: center; border: 1px solid #30363d; width: 320px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    h2 { color: #58a6ff; font-size: 22px; margin-bottom: 10px; }
+    .timer { font-size: 48px; font-weight: bold; font-family: monospace; color: #3fb950; margin: 20px 0; }
+    .buttons { display: flex; gap: 10px; justify-content: center; }
+    button { background: #21262d; border: 1px solid #30363d; color: #c9d1d9; padding: 10px 18px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    button:hover { background: #30363d; color: #58a6ff; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>🎯 25-Min Focus Session</h2>
+    <div class="timer" id="time">25:00</div>
+    <div class="buttons">
+      <button onclick="startTimer()">Start</button>
+      <button onclick="pauseTimer()">Pause</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+  </div>
+  <script>
+    let timeLeft = 1500, timerId = null;
+    function updateDisplay() {
+      let m = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+      let s = String(timeLeft % 60).padStart(2, '0');
+      document.getElementById('time').innerText = `${m}:${s}`;
+    }
+    function startTimer() {
+      if (!timerId) {
+        timerId = setInterval(() => {
+          if (timeLeft > 0) { timeLeft--; updateDisplay(); }
+          else { clearInterval(timerId); alert("Session Completed! Take a break."); }
+        }, 1000);
+      }
+    }
+    function pauseTimer() { clearInterval(timerId); timerId = null; }
+    function resetTimer() { pauseTimer(); timeLeft = 1500; updateDisplay(); }
+  </script>
+</body>
+</html>
