@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Digital Clock</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: #0f172a; color: #38bdf8; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .clock-card { background: #1e293b; padding: 30px 40px; border-radius: 16px; border: 1px solid #334155; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    h2 { font-size: 18px; color: #94a3b8; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+    .time { font-size: 48px; font-weight: bold; font-family: monospace; color: #facc15; }
+    .date { margin-top: 8px; color: #cbd5e1; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="clock-card">
+    <h2>⏰ Real-Time Digital Clock</h2>
+    <div class="time" id="clock">00:00:00 AM</div>
+    <div class="date" id="date">Loading...</div>
+  </div>
+  <script>
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('clock').innerText = now.toLocaleTimeString();
+      document.getElementById('date').innerText = now.toDateString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
