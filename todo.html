@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Task Manager</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: #0d1117; color: #c9d1d9; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .todo-card { background: #161b22; padding: 25px; border-radius: 14px; border: 1px solid #30363d; width: 340px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    h2 { font-size: 20px; color: #58a6ff; margin-bottom: 15px; text-align: center; }
+    .input-box { display: flex; gap: 8px; margin-bottom: 15px; }
+    input { flex: 1; padding: 10px; background: #0d1117; border: 1px solid #30363d; color: #fff; border-radius: 6px; outline: none; }
+    button { background: #238636; color: white; border: none; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    button:hover { background: #2ea043; }
+    ul { list-style: none; }
+    li { background: #21262d; padding: 10px; border-radius: 6px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #30363d; }
+    .del-btn { background: #da3633; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="todo-card">
+    <h2>📝 Daily Task Manager</h2>
+    <div class="input-box">
+      <input type="text" id="taskInput" placeholder="Add a new task...">
+      <button onclick="addTask()">Add</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+  <script>
+    function addTask() {
+      let input = document.getElementById('taskInput');
+      let text = input.value.trim();
+      if (text === '') return;
+      let li = document.createElement('li');
+      li.innerHTML = `<span>${text}</span> <button class="del-btn" onclick="this.parentElement.remove()">X</button>`;
+      document.getElementById('taskList').appendChild(li);
+      input.value = '';
+    }
+  </script>
+</body>
+</html>
