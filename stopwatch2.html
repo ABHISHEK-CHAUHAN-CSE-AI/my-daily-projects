@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimal Stopwatch</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .card { background: #1e293b; padding: 30px; border-radius: 16px; border: 1px solid #334155; text-align: center; width: 320px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    h2 { font-size: 20px; color: #38bdf8; margin-bottom: 15px; }
+    .display { font-size: 42px; font-weight: bold; font-family: monospace; color: #facc15; margin-bottom: 20px; }
+    .btns { display: flex; gap: 10px; justify-content: center; }
+    button { padding: 8px 16px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+    .start { background: #22c55e; color: white; }
+    .stop { background: #ef4444; color: white; }
+    .reset { background: #64748b; color: white; }
+    button:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>⏱️ Digital Stopwatch</h2>
+    <div class="display" id="time">00:00:00</div>
+    <div class="btns">
+      <button class="start" onclick="startTimer()">Start</button>
+      <button class="stop" onclick="stopTimer()">Stop</button>
+      <button class="reset" onclick="resetTimer()">Reset</button>
+    </div>
+  </div>
+  <script>
+    let timer, seconds = 0;
+    function updateDisplay() {
+      let hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
+      let mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+      let secs = String(seconds % 60).padStart(2, '0');
+      document.getElementById('time').innerText = `${hrs}:${mins}:${secs}`;
+    }
+    function startTimer() {
+      if (!timer) {
+        timer = setInterval(() => { seconds++; updateDisplay(); }, 1000);
+      }
+    }
+    function stopTimer() { clearInterval(timer); timer = null; }
+    function resetTimer() { stopTimer(); seconds = 0; updateDisplay(); }
+  </script>
+</body>
+</html>
