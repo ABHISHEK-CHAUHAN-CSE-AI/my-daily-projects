@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Notes App</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+    .card { background: #1e293b; padding: 25px; border-radius: 16px; border: 1px solid #334155; width: 100%; max-width: 380px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    h2 { font-size: 20px; color: #38bdf8; margin-bottom: 12px; text-align: center; }
+    textarea { width: 100%; height: 120px; background: #0f172a; border: 1px solid #334155; color: #e2e8f0; padding: 10px; border-radius: 8px; resize: none; outline: none; margin-bottom: 12px; font-size: 14px; }
+    .btns { display: flex; gap: 10px; }
+    button { flex: 1; padding: 10px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    .save { background: #22c55e; color: white; }
+    .clear { background: #ef4444; color: white; }
+    #status { margin-top: 10px; font-size: 12px; color: #a3e635; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>📌 Quick Sticky Note</h2>
+    <textarea id="noteInput" placeholder="Write your quick notes here..."></textarea>
+    <div class="btns">
+      <button class="save" onclick="saveNote()">Save Note</button>
+      <button class="clear" onclick="clearNote()">Clear</button>
+    </div>
+    <div id="status"></div>
+  </div>
+  <script>
+    window.onload = function() {
+      let saved = localStorage.getItem('user_note');
+      if (saved) document.getElementById('noteInput').value = saved;
+    };
+    function saveNote() {
+      let text = document.getElementById('noteInput').value;
+      localStorage.setItem('user_note', text);
+      document.getElementById('status').innerText = "Note saved locally!";
+      setTimeout(() => document.getElementById('status').innerText = "", 2000);
+    }
+    function clearNote() {
+      localStorage.removeItem('user_note');
+      document.getElementById('noteInput').value = "";
+      document.getElementById('status').innerText = "Note cleared!";
+      setTimeout(() => document.getElementById('status').innerText = "", 2000);
+    }
+  </script>
+</body>
+</html>
