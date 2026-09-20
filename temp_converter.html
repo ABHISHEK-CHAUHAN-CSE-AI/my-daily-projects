@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+    .card { background: #1e293b; padding: 30px; border-radius: 16px; border: 1px solid #334155; width: 100%; max-width: 400px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); text-align: center; }
+    h2 { font-size: 22px; color: #38bdf8; margin-bottom: 20px; }
+    .input-group { margin-bottom: 15px; text-align: left; }
+    label { font-size: 14px; color: #94a3b8; display: block; margin-bottom: 5px; }
+    input { width: 100%; background: #0f172a; border: 1px solid #334155; color: #38bdf8; padding: 10px; border-radius: 8px; outline: none; font-size: 16px; font-weight: bold; }
+    .btn { width: 100%; padding: 12px; background: #38bdf8; color: #0f172a; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; transition: 0.2s; }
+    .btn:hover { background: #0284c7; color: white; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>🌡️ Temp Converter</h2>
+    <div class="input-group">
+      <label>Celsius (°C)</label>
+      <input type="number" id="celsius" placeholder="Enter Celsius" oninput="convertFromC()">
+    </div>
+    <div class="input-group">
+      <label>Fahrenheit (°F)</label>
+      <input type="number" id="fahrenheit" placeholder="Enter Fahrenheit" oninput="convertFromF()">
+    </div>
+    <button class="btn" onclick="clearFields()">Clear All</button>
+  </div>
+
+  <script>
+    function convertFromC() {
+      let c = parseFloat(document.getElementById('celsius').value);
+      if (!isNaN(c)) {
+        let f = (c * 9/5) + 32;
+        document.getElementById('fahrenheit').value = f.toFixed(2);
+      } else {
+        document.getElementById('fahrenheit').value = '';
+      }
+    }
+    function convertFromF() {
+      let f = parseFloat(document.getElementById('fahrenheit').value);
+      if (!isNaN(f)) {
+        let c = (f - 32) * 5/9;
+        document.getElementById('celsius').value = c.toFixed(2);
+      } else {
+        document.getElementById('celsius').value = '';
+      }
+    }
+    function clearFields() {
+      document.getElementById('celsius').value = '';
+      document.getElementById('fahrenheit').value = '';
+    }
+  </script>
+</body>
+</html>
