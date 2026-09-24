@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            width: 320px;
+            text-align: center;
+        }
+        h2 { margin-top: 0; color: #38bdf8; }
+        input[type="color"] {
+            width: 100px;
+            height: 100px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: none;
+        }
+        .code-box {
+            background: #0f172a;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #38bdf8;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Color Picker</h2>
+        <input type="color" id="colorInput" value="#38bdf8" oninput="updateColor()">
+        <div class="code-box" id="hexVal">HEX: #38bdf8</div>
+        <div class="code-box" id="rgbVal">RGB: rgb(56, 189, 248)</div>
+    </div>
+
+    <script>
+        function updateColor() {
+            let hex = document.getElementById('colorInput').value;
+            document.getElementById('hexVal').innerText = `HEX: ${hex}`;
+            
+            let r = parseInt(hex.substr(1,2), 16);
+            let g = parseInt(hex.substr(3,2), 16);
+            let b = parseInt(hex.substr(5,2), 16);
+            document.getElementById('rgbVal').innerText = `RGB: rgb(${r}, ${g}, ${b})`;
+        }
+    </script>
+</body>
+</html>
