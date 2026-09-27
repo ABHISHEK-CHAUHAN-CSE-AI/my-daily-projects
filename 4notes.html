@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Study Notes - Operating System Concepts</title>
+    <style>
+        /* Modern Dark Theme for GitHub Pages */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #161b22;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+        }
+        h1 { color: #58a6ff; border-bottom: 2px solid #30363d; padding-bottom: 10px; }
+        h2 { color: #79c0ff; margin-top: 20px; }
+        .topic-box {
+            background: #21262d;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #1f6beb;
+            border-radius: 4px;
+        }
+        code { background: #272e3b; color: #f28b82; padding: 2px 6px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <!-- Main Notes Container -->
+    <div class="container">
+        <h1>💻 OS & CPU Scheduling Notes</h1>
+
+        <!-- Section 1 -->
+        <h2>1. CPU Scheduling Basics</h2>
+        <div class="topic-box">
+            <p><strong>Burst Time (BT):</strong> Time required by a process for CPU execution.</p>
+            <p><strong>Arrival Time (AT):</strong> Time at which the process arrives in the Ready Queue.</p>
+            <p><strong>Turnaround Time (TAT):</strong> <code>TAT = Completion Time - Arrival Time</code></p>
+            <p><strong>Waiting Time (WT):</strong> <code>WT = Turnaround Time - Burst Time</code></p>
+        </div>
+
+        <!-- Section 2 -->
+        <h2>2. Key Scheduling Algorithms</h2>
+        <div class="topic-box">
+            <p><strong>FCFS (First-Come, First-Served):</strong> Non-preemptive, simple FIFO queue logic.</p>
+            <p><strong>SJF (Shortest Job First):</strong> Minimizes average waiting time.</p>
+            <p><strong>Round Robin (RR):</strong> Preemptive algorithm designed for time-sharing systems using a <code>Time Quantum</code>.</p>
+        </div>
+    </div>
+</body>
+</html>
