@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical Engineering Circuit Analysis Cheat Sheet</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #10b981;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            color: var(--accent);
+            text-align: center;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 10px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            border: 1px solid #334155;
+        }
+        .card h2 {
+            margin-top: 0;
+            color: var(--accent);
+            font-size: 1.25rem;
+        }
+        .formula {
+            background-color: #0f172a;
+            padding: 10px 15px;
+            border-left: 4px solid var(--accent);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 10px 0;
+            color: #34d399;
+        }
+        ul {
+            padding-left: 20px;
+            color: var(--muted);
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Electrical Engineering: Circuit Theorems Quick Sheet</h1>
+
+        <div class="card">
+            <h2>1. Kirchhoff's Laws (KCL & KVL)</h2>
+            <ul>
+                <li><strong>KCL (Nodal Analysis):</strong> Sum of currents entering a junction equals sum leaving. (Σ I = 0)</li>
+                <li><strong>KVL (Mesh Analysis):</strong> Algebraic sum of potential differences in a closed loop is zero. (Σ V = 0)</li>
+            </ul>
+            <div class="formula">Nodal Eq: (V1 - V2) / R1 + V1 / R2 = I_src</div>
+        </div>
+
+        <div class="card">
+            <h2>2. Thevenin's Theorem Steps</h2>
+            <p>Converts any complex linear circuit into a single voltage source (Vth) and series resistor (Rth):</p>
+            <div class="formula">Load Current: IL = Vth / (Rth + RL)</div>
+            <ul>
+                <li><strong>Vth:</strong> Open circuit voltage across load terminals.</li>
+                <li><strong>Rth:</strong> Equivalent resistance from load terminals (Short V-sources, Open I-sources).</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
