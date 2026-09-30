@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Memory & Pointers Cheat Sheet</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #f59e0b;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            color: var(--accent);
+            text-align: center;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 10px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            border: 1px solid #334155;
+        }
+        .card h2 {
+            margin-top: 0;
+            color: var(--accent);
+            font-size: 1.25rem;
+        }
+        .formula {
+            background-color: #0f172a;
+            padding: 10px 15px;
+            border-left: 4px solid var(--accent);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 10px 0;
+            color: #fbbf24;
+        }
+        ul {
+            padding-left: 20px;
+            color: var(--muted);
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>C Programming: Memory & Pointers Quick Sheet</h1>
+
+        <div class="card">
+            <h2>1. Pointer Fundamentals</h2>
+            <ul>
+                <li><strong>Pointer Variable:</strong> Holds the memory address of another variable.</li>
+                <li><strong>Address-of Operator (&):</strong> Fetches the memory address of a variable.</li>
+                <li><strong>Dereference Operator (*):</strong> Accesses the value stored at the target memory address.</li>
+            </ul>
+            <div class="formula">int x = 10; int *ptr = &x; // *ptr evaluates to 10</div>
+        </div>
+
+        <div class="card">
+            <h2>2. Call by Reference (Swapping Logic)</h2>
+            <p>Modifies original variables directly in memory inside functions:</p>
+            <div class="formula">void swap(int *a, int *b) { int temp = *a; *a = *b; *b = temp; }</div>
+        </div>
+
+        <div class="card">
+            <h2>3. Array & Pointer Relationship</h2>
+            <ul>
+                <li>An array name acts as a constant pointer to its first element: <code>arr == &arr[0]</code></li>
+                <li>Pointer Arithmetic: <code>*(arr + i)</code> is equivalent to <code>arr[i]</code></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
