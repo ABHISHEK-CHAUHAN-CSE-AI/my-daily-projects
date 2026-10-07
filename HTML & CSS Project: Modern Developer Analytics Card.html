@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Analytics Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 24px;
+            width: 360px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.15);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        .info h3 {
+            font-size: 18px;
+            color: #f1f5f9;
+        }
+
+        .info p {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .stat-box {
+            background: #0f172a;
+            padding: 12px;
+            border-radius: 10px;
+            border-left: 3px solid #38bdf8;
+        }
+
+        .stat-box h4 {
+            font-size: 11px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-box p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #38bdf8;
+            margin-top: 4px;
+        }
+
+        .skills-container {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #334155;
+            color: #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .tag.highlight {
+            background: #2563eb;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="profile-header">
+            <div class="avatar">AC</div>
+            <div class="info">
+                <h3>Abhishek Chauhan</h3>
+                <p>B.Tech CSE (AI) Student</p>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <h4>GitHub Commit</h4>
+                <p>Daily Active</p>
+            </div>
+            <div class="stat-box">
+                <h4>Main Stack</h4>
+                <p>C & Web Dev</p>
+            </div>
+        </div>
+
+        <div class="skills-container">
+            <span class="tag highlight">C Programming</span>
+            <span class="tag highlight">HTML5 / CSS3</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">Git & GitHub</span>
+        </div>
+    </div>
+
+</body>
+</html>
