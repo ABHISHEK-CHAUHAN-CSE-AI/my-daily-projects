@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Card</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .profile-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: #238636;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            font-weight: bold;
+            margin: 0 auto 16px;
+        }
+        .name {
+            font-size: 20px;
+            color: #f0f6fc;
+            margin-bottom: 4px;
+        }
+        .title {
+            font-size: 14px;
+            color: #8b949e;
+            margin-bottom: 16px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #238636;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .btn:hover {
+            background-color: #2ea043;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <div class="avatar">A</div>
+        <h2 class="name">Abhishek Chauhan</h2>
+        <p class="title">B.Tech CSE (AI) Student & Developer</p>
+        <a href="#" class="btn">View Github</a>
+    </div>
+
+</body>
+</html>
