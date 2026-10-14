@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Analytics Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 240px;
+            background-color: #161b22;
+            border-right: 1px solid #30363d;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-size: 20px;
+            font-weight: 700;
+            color: #58a6ff;
+            margin-bottom: 32px;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 12px;
+        }
+
+        .nav-links a {
+            color: #8b949e;
+            text-decoration: none;
+            padding: 10px 12px;
+            border-radius: 6px;
+            display: block;
+            transition: 0.2s;
+        }
+
+        .nav-links a.active, .nav-links a:hover {
+            background-color: #21262d;
+            color: #f0f6fc;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 32px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #f0f6fc;
+        }
+
+        /* Grid Layout */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .card h3 {
+            font-size: 13px;
+            color: #8b949e;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .card .value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #38bdf8;
+        }
+
+        /* Activity List */
+        .recent-activity {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .recent-activity h2 {
+            font-size: 18px;
+            color: #f0f6fc;
+            margin-bottom: 16px;
+        }
+
+        .activity-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #21262d;
+            font-size: 14px;
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .status {
+            color: #238636;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div>
+            <div class="brand">DevPulse.io</div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Overview</a></li>
+                <li><a href="#">Repositories</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Analytics</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Developer Metrics</h1>
+        </div>
+
+        <!-- Metric Cards -->
+        <div class="grid-cards">
+            <div class="card">
+                <h3>Current Streak</h3>
+                <div class="value">30+ Days</div>
+            </div>
+            <div class="card">
+                <h3>Total Commits</h3>
+                <div class="value">142</div>
+            </div>
+            <div class="card">
+                <h3>Languages Used</h3>
+                <div class="value">C, C++, HTML</div>
+            </div>
+        </div>
+
+        <!-- Recent Activity Section -->
+        <div class="recent-activity">
+            <h2>Recent Activity Logs</h2>
+            <div class="activity-item">
+                <span>Pushed `01_student_cgpa_calc.cpp`</span>
+                <span class="status">Success</span>
+            </div>
+            <div class="activity-item">
+                <span>Updated `02_developer_dashboard.html`</span>
+                <span class="status">Success</span>
+            </div>
+            <div class="activity-item">
+                <span>GitHub Daily Streak Backup</span>
+                <span class="status">Active</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
