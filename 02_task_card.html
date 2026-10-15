@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Task Card UI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .task-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 14px;
+            padding: 24px;
+            width: 350px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease;
+        }
+        .task-card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-3px);
+        }
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .badge {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .task-title {
+            font-size: 18px;
+            color: #f0f6fc;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .task-desc {
+            font-size: 13px;
+            color: #8b949e;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .task-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #21262d;
+            padding-top: 16px;
+            font-size: 12px;
+            color: #8b949e;
+        }
+        .btn-action {
+            background: #238636;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-action:hover {
+            background: #2ea043;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="task-card">
+        <div class="task-header">
+            <span class="badge">Diamond Protocol</span>
+            <span>Active</span>
+        </div>
+        <div class="task-title">GitHub Streak & Dev Goals</div>
+        <div class="task-desc">Building robust C++ components and clean HTML/CSS web interfaces daily with 100% consistency.</div>
+        <div class="task-footer">
+            <span>Abhishek Chauhan</span>
+            <button class="btn-action">Commit</button>
+        </div>
+    </div>
+
+</body>
+</html>
