@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Project Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .project-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 14px;
+            padding: 24px;
+            width: 350px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .project-card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-3px);
+        }
+        .project-title {
+            font-size: 18px;
+            color: #f0f6fc;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .project-desc {
+            font-size: 13px;
+            color: #8b949e;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .tech-stack {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .badge {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .btn-repo {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #238636;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .btn-repo:hover {
+            background: #2ea043;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="project-card">
+        <div class="project-title">B.Tech CSE Project Hub</div>
+        <div class="project-desc">A collection of core C programs and responsive HTML/CSS UI components built during the 1st year engineering journey.</div>
+        <div class="tech-stack">
+            <span class="badge">C Language</span>
+            <span class="badge">HTML5</span>
+            <span class="badge">CSS3</span>
+        </div>
+        <a href="#" class="btn-repo">View Repository</a>
+    </div>
+
+</body>
+</html>
