@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Card UI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .pricing-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+        .title {
+            font-size: 22px;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 36px;
+            color: #007BFF;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+            color: #666666;
+            text-align: left;
+        }
+        .features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pricing-card">
+        <div class="title">Pro Developer</div>
+        <div class="price">$29<span>/month</span></div>
+        <ul class="features">
+            <li>✔ Unlimited GitHub Repos</li>
+            <li>✔ Advanced C & AI Projects</li>
+            <li>✔ 24/7 Priority Support</li>
+            <li>✔ Custom Domain Integration</li>
+        </ul>
+        <button class="btn">Get Started</button>
+    </div>
+
+</body>
+</html>
